@@ -1,0 +1,73 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("7559f55b-a2f0-4801-96f7-8c101eedaba9",
+	"00000000-0000-0000-0000-000000000000",
+	"7d0bb725-851b-452d-8f36-2bb764be7636",
+	'Functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("3456b2b4-2dc3-4de5-b9fc-790f30165df2",
+	112,
+	"7559f55b-a2f0-4801-96f7-8c101eedaba9",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'ResponseTest::Components::Responder::Functions');
+INSERT INTO DIM_DIA
+	VALUES ("3456b2b4-2dc3-4de5-b9fc-790f30165df2",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("89936239-0209-4a62-9467-8a41422651dd",
+	"00000000-0000-0000-0000-000000000000",
+	'StartUp',
+	'',
+	'LOG::LogInfo( message:"Here we are");',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("89936239-0209-4a62-9467-8a41422651dd",
+	1,
+	"7559f55b-a2f0-4801-96f7-8c101eedaba9",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("7559f55b-a2f0-4801-96f7-8c101eedaba9",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"1155fe75-a325-495b-b1fe-e886292e902a",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("1155fe75-a325-495b-b1fe-e886292e902a",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'Responder',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../Responder.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("7d0bb725-851b-452d-8f36-2bb764be7636",
+	'ResponseTest',
+	1,
+	'../../../ResponseTest.xtuml');

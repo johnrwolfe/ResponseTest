@@ -1,0 +1,84 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("2ea57d02-6792-4048-ad31-a99b817c0a21",
+	"00000000-0000-0000-0000-000000000000",
+	'DuplexComm',
+	'');
+INSERT INTO C_EP
+	VALUES ("044c5a66-907b-4985-9c23-e8a30bd8c9df",
+	"2ea57d02-6792-4048-ad31-a99b817c0a21",
+	-1,
+	'QueryOne',
+	'');
+INSERT INTO C_AS
+	VALUES ("044c5a66-907b-4985-9c23-e8a30bd8c9df",
+	'QueryOne',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("0fbb9841-7e8b-482b-a628-ad96622fc601",
+	"044c5a66-907b-4985-9c23-e8a30bd8c9df",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'questionOne',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("3cc21cd2-fc15-4239-8175-351eda502201",
+	"2ea57d02-6792-4048-ad31-a99b817c0a21",
+	-1,
+	'QueryTwo',
+	'');
+INSERT INTO C_AS
+	VALUES ("3cc21cd2-fc15-4239-8175-351eda502201",
+	'QueryTwo',
+	'',
+	0,
+	"044c5a66-907b-4985-9c23-e8a30bd8c9df");
+INSERT INTO C_PP
+	VALUES ("7c252137-9272-4667-8f0d-0afd77a1bc6d",
+	"3cc21cd2-fc15-4239-8175-351eda502201",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'questionTwo',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("7b77e896-d436-43f9-88f7-463eb1ea95f0",
+	"2ea57d02-6792-4048-ad31-a99b817c0a21",
+	-1,
+	'Response',
+	'');
+INSERT INTO C_AS
+	VALUES ("7b77e896-d436-43f9-88f7-463eb1ea95f0",
+	'Response',
+	'',
+	1,
+	"3cc21cd2-fc15-4239-8175-351eda502201");
+INSERT INTO C_PP
+	VALUES ("5154bbb3-4a6d-4ef7-9a17-9ad8b8afddff",
+	"7b77e896-d436-43f9-88f7-463eb1ea95f0",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'anAnswer',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("2ea57d02-6792-4048-ad31-a99b817c0a21",
+	1,
+	"ef961799-3c83-4ee2-b48b-d79e8bebbc5e",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("ef961799-3c83-4ee2-b48b-d79e8bebbc5e",
+	"7d0bb725-851b-452d-8f36-2bb764be7636",
+	"7d0bb725-851b-452d-8f36-2bb764be7636",
+	'Interfaces',
+	'',
+	0,
+	'../Interfaces.xtuml');

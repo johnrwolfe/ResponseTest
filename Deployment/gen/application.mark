@@ -1,3 +1,4 @@
 *,RootPackage,*,Deployment::Deployment
 Components::Responder,InitFunction,Component,StartUp
-Deployment::ResponseTest::SocketPort,HttpEndpoint,Port,https://IdontKnowWhere
+Components::Responder::SocketPort,BaseClass,Port,HttpPort
+Components::Responder::SocketPort,HttpEndpoint,Port,https://IdontKnowWhere

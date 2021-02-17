@@ -1,6 +1,8 @@
 package deployment;
 
 
+import deployment.Responder;
+
 import io.ciera.runtime.summit.application.ApplicationExecutor;
 import io.ciera.runtime.summit.application.IApplication;
 import io.ciera.runtime.summit.application.ILogger;
@@ -18,7 +20,7 @@ public class DeploymentApplication implements IApplication {
     private ApplicationExecutor[] executors;
 
     public DeploymentApplication() {
-        components = new IComponent<?>[0];
+        components = new IComponent<?>[1];
         executors = new ApplicationExecutor[1];
     }
 
@@ -39,8 +41,12 @@ public class DeploymentApplication implements IApplication {
                 executors[i] = new ApplicationExecutor( "DeploymentApplicationExecutor" + i, args );
             }
         }
+        components[0] = new Responder(this, executors[0], 0);
     }
 
+    public Responder Responder() {
+        return (Responder)components[0];
+    }
 
     @Override
     public void initialize() {

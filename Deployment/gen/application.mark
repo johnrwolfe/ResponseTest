@@ -1,4 +1,0 @@
-*,RootPackage,*,Deployment::Deployment
-Components::Responder,InitFunction,Component,StartUp
-Components::Responder::SocketPort,BaseClass,Port,HttpPort
-Components::Responder::SocketPort,HttpEndpoint,Port,https://IdontKnowWhere

@@ -1,0 +1,56 @@
+-- BP 7.1.6 content: SystemModel syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO S_SYS
+	VALUES ("41e4bb78-4b5b-4259-ae1a-848fbabc3de5",
+	'Runner',
+	1);
+INSERT INTO GD_MD
+	VALUES ("ea42198a-9bef-47d8-bb54-4c76de9a59cc",
+	108,
+	"41e4bb78-4b5b-4259-ae1a-848fbabc3de5",
+	92,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'Runner');
+INSERT INTO GD_GE
+	VALUES ("b2d21f4f-f902-448d-885d-ceed9ebe364e",
+	"ea42198a-9bef-47d8-bb54-4c76de9a59cc",
+	"b8ee4391-b011-4caa-bcee-8b899273532c",
+	108,
+	0,
+	'Runner::RunConfig');
+INSERT INTO GD_SHP
+	VALUES ("b2d21f4f-f902-448d-885d-ceed9ebe364e");
+INSERT INTO GD_NCS
+	VALUES ("b2d21f4f-f902-448d-885d-ceed9ebe364e");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"b2d21f4f-f902-448d-885d-ceed9ebe364e");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"b2d21f4f-f902-448d-885d-ceed9ebe364e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b2d21f4f-f902-448d-885d-ceed9ebe364e",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_DIA
+	VALUES ("ea42198a-9bef-47d8-bb54-4c76de9a59cc",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");

@@ -1,0 +1,68 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("072ffeea-2985-48c2-97e3-30b3f96e7f80",
+	'Hearbeat',
+	1,
+	'Hearbeat',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("e1aee61e-9593-468c-a851-7cecdc06d195",
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80");
+INSERT INTO O_BATTR
+	VALUES ("e1aee61e-9593-468c-a851-7cecdc06d195",
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80");
+INSERT INTO O_ATTR
+	VALUES ("e1aee61e-9593-468c-a851-7cecdc06d195",
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80",
+	"2271b8ce-9a68-48db-b77c-0a78fa50f7ba",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("2271b8ce-9a68-48db-b77c-0a78fa50f7ba",
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80");
+INSERT INTO O_BATTR
+	VALUES ("2271b8ce-9a68-48db-b77c-0a78fa50f7ba",
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80");
+INSERT INTO O_ATTR
+	VALUES ("2271b8ce-9a68-48db-b77c-0a78fa50f7ba",
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80",
+	"00000000-0000-0000-0000-000000000000",
+	'timr',
+	'',
+	'',
+	'timr',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000f",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80");
+INSERT INTO O_ID
+	VALUES (1,
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80");
+INSERT INTO O_ID
+	VALUES (2,
+	"072ffeea-2985-48c2-97e3-30b3f96e7f80");
+INSERT INTO PE_PE
+	VALUES ("072ffeea-2985-48c2-97e3-30b3f96e7f80",
+	1,
+	"ca4cec67-2093-4610-8f67-75930178bc5b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("ca4cec67-2093-4610-8f67-75930178bc5b",
+	"00000000-0000-0000-0000-000000000000",
+	"7d0bb725-851b-452d-8f36-2bb764be7636",
+	'Classes',
+	'',
+	0,
+	'../Classes.xtuml');

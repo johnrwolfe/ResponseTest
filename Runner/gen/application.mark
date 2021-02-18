@@ -1,0 +1,4 @@
+*,RootPackage,*,Runner::RunConfig
+Components::Responder,InitFunction,Component,StartUp
+Components::Responder::SocketPort,BaseClass,Port,HttpPort
+Components::Responder::SocketPort,HttpEndpoint,Port,https://localhost:80

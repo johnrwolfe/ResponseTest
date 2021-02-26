@@ -63,7 +63,7 @@ INSERT INTO SM_ACT
 	1,
 	'LOG::LogInfo( message:"Still ticking");
 
-send SocketPort::Response( anAnswer:"tick-tock" );',
+send ClientComms::Response( anAnswer:"tick-tock" );',
 	'',
 	0);
 INSERT INTO SM_TAH

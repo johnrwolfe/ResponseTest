@@ -64,7 +64,7 @@ INSERT INTO GD_GE
 	"ee046659-7d84-4396-b1a0-7f8106ed858a",
 	94,
 	0,
-	'ResponseTest::Components::Responder::SocketPort::DuplexComm');
+	'ResponseTest::Components::Responder::ClientComms::DuplexComm');
 INSERT INTO GD_CON
 	VALUES ("078c1c29-de92-4736-a19c-1fb80ff6f0e1",
 	"00000000-0000-0000-0000-000000000000");
@@ -216,7 +216,7 @@ INSERT INTO DIM_DIA
 INSERT INTO C_PO
 	VALUES ("73216294-69a3-49a4-bd97-d41418e6cec3",
 	"1155fe75-a325-495b-b1fe-e886292e902a",
-	'SocketPort',
+	'ClientComms',
 	0,
 	0);
 INSERT INTO C_IR
@@ -229,7 +229,7 @@ INSERT INTO C_P
 	'DuplexComm',
 	'Unnamed Interface',
 	'',
-	'Responder::SocketPort::DuplexComm');
+	'Responder::ClientComms::DuplexComm');
 INSERT INTO SPR_PEP
 	VALUES ("87eaa28e-7383-4d87-aed4-3ff67ca64878",
 	"044c5a66-907b-4985-9c23-e8a30bd8c9df",
@@ -238,7 +238,7 @@ INSERT INTO SPR_PS
 	VALUES ("87eaa28e-7383-4d87-aed4-3ff67ca64878",
 	'QueryOne',
 	'',
-	'send SocketPort::Response( anAnswer:"First I heard " + param.questionOne );',
+	'send ClientComms::Response( anAnswer:"First I heard " + param.questionOne );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -256,7 +256,7 @@ INSERT INTO SPR_PS
 	VALUES ("014f578f-5707-471c-a6f2-e627d0dcdc0e",
 	'QueryTwo',
 	'',
-	'send SocketPort::Response( anAnswer:"Second I heard " + param.questionTwo );',
+	'send ClientComms::Response( anAnswer:"Second I heard " + param.questionTwo );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -275,7 +275,7 @@ INSERT INTO SPR_PS
 	'Response',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7b77e896-d436-43f9-88f7-463eb1ea95f0",

@@ -1,0 +1,73 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("4ac19241-6d1c-415a-8a1f-73ff5d1d1121",
+	"00000000-0000-0000-0000-000000000000",
+	"953fa75f-d9a5-498b-a8b3-320643c97d3e",
+	'Functions',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("52e6c1a2-3688-4425-a4d1-f717b92dab03",
+	112,
+	"4ac19241-6d1c-415a-8a1f-73ff5d1d1121",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'ClientHandler::Component::CommsHandler::Functions');
+INSERT INTO DIM_DIA
+	VALUES ("52e6c1a2-3688-4425-a4d1-f717b92dab03",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO S_SYNC
+	VALUES ("30584b6d-c032-4313-be1e-89b88b5f32be",
+	"00000000-0000-0000-0000-000000000000",
+	'SanityCheck',
+	'',
+	'LOG::LogInfo( message:"I can talk back - right?" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("30584b6d-c032-4313-be1e-89b88b5f32be",
+	1,
+	"4ac19241-6d1c-415a-8a1f-73ff5d1d1121",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO PE_PE
+	VALUES ("4ac19241-6d1c-415a-8a1f-73ff5d1d1121",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"53fa50fc-7453-46b4-91ae-c8d850d30958",
+	7);
+INSERT INTO C_C_PROXY
+	VALUES ("53fa50fc-7453-46b4-91ae-c8d850d30958",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'CommsHandler',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../CommsHandler.xtuml');
+INSERT INTO S_SYS_PROXY
+	VALUES ("953fa75f-d9a5-498b-a8b3-320643c97d3e",
+	'ClientHandler',
+	1,
+	'../../../ClientHandler.xtuml');

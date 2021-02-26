@@ -13,5 +13,6 @@
   <modules>
     <module>Runner</module>
     <module>ResponseTest</module>
+    <module>ClientHandler</module>
   </modules>
 </project>

@@ -47,7 +47,7 @@ public class CommsHandler extends Component<CommsHandler> {
     // domain functions
     public void ForwardResponse( String p_message ) throws XtumlException {
         context().LOG().LogInfo( "CommsHandler.ForwardResponse()" );
-        cf = FirstEndpointWebSocket.sendText( p_message, true );
+        FirstEndpointWebSocket.sendText( p_message, true );
     }
     
     public void SanityCheck() throws XtumlException {

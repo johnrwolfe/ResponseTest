@@ -9,6 +9,7 @@ INSERT INTO C_C
 	0,
 	"00000000-0000-0000-0000-000000000000",
 	0,
+	'',
 	'');
 INSERT INTO GD_MD
 	VALUES ("36c693c6-e764-4eb7-aa32-4d9c8cf5c904",
@@ -194,7 +195,8 @@ INSERT INTO C_PO
 	"53fa50fc-7453-46b4-91ae-c8d850d30958",
 	'App',
 	0,
-	0);
+	0,
+	'');
 INSERT INTO C_IR
 	VALUES ("ee4ec02d-5722-47c1-b01d-3dc8f2ff13b5",
 	"2ea57d02-6792-4048-ad31-a99b817c0a21",
@@ -216,6 +218,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	3,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("044c5a66-907b-4985-9c23-e8a30bd8c9df",
@@ -223,6 +226,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'QueryOne',
 	'',
+	0,
 	'../../../../../ResponseTest/models/ResponseTest/Interfaces/DuplexComm/DuplexComm.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("e661723b-03cd-4358-8461-621600c42940",
@@ -234,6 +238,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	3,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("3cc21cd2-fc15-4239-8175-351eda502201",
@@ -241,6 +246,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'QueryTwo',
 	'',
+	0,
 	'../../../../../ResponseTest/models/ResponseTest/Interfaces/DuplexComm/DuplexComm.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("4f98ade0-dfd0-4666-874b-3254486baf71",
@@ -250,8 +256,9 @@ INSERT INTO SPR_RS
 	VALUES ("4f98ade0-dfd0-4666-874b-3254486baf71",
 	'Response',
 	'',
-	'',
-	3,
+	'::ForwardResponse( message:param.anAnswer );',
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7b77e896-d436-43f9-88f7-463eb1ea95f0",
@@ -259,6 +266,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Response',
 	'',
+	0,
 	'../../../../../ResponseTest/models/ResponseTest/Interfaces/DuplexComm/DuplexComm.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("2ea57d02-6792-4048-ad31-a99b817c0a21",

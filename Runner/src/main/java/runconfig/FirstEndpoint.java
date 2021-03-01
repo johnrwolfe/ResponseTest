@@ -1,58 +1,44 @@
 package runconfig;
 
-import javax.websocket;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.WebSocket;
+import java.util.concurrent.CompletionStage;
 import runconfig.CommsHandler;
 
-@ServerEndpoint(value = "/gizmo", decoders = MessageDecoder.class,  encoders = MessageEncoder.class )
-    public class FirstEndpoint {
+public class FirstEndpoint implements WebSocket.Listener {
 
-        private Session gizmoSession;
+	@Override
+	public void onOpen( WebSocket webSocket ) {
+      System.out.println( "onOpen" );
+      WebSocket.Listener.super.onOpen( webSocket );
+	}
 
-        @OnOpen
-        public void onOpen( Session session ) throws IOException {
-     
-            this.gizmoSession = session;
+	@Override
+	public CompletionStage<?> onText( WebSocket webSocket, CharSequence data, boolean last ) {
+	  System.out.println( "onText: data = %s, last = %s", data, last );
+      CommsHandler.Singleton().App().QueryOne( data );
+	}
 
-            clientMessage message = new clientMessage();
-            message.setFrom("gizmo");
-            message.setContent("Connected!");
-            userSend(message, this.gizmoSession);
-        }
+	@Override
+	public CompletionStage<?> onClose( WebSocket webSocket, int statusCode, String reason ){
+      System.out.println( "onClose: statusCode = %d; reason = %s", statusCode, reason );
+      return null;
+	}
 
-        @OnMessage
-        public void onMessage(Session session, clientMessage message) throws IOException {
-		  String msg = message.getContent();  
-          context().LOG().LogInfo( msg + " message received from " + message.getFrom() );
-          
-		  if ( msg == "first" ) {
-			  CommsHandler.Singleton().App().QueryOne( msg );
-          }
-		  if ( msg == "second" ) {
-			  CommsHandler.Singleton().App().QueryTwo( msg );
-          }
+	@Override
+	public void onError( WebSocket webSocket, Throwable error ) {
+      System.out.println( "onError: %s", error );
+	}
+
+	private static void userSend(clientMessage message, Session session) 
+			throws IOException, EncodeException {
+
+		try {
+			session.getBasicRemote().
+			sendObject(message);
+		} catch (IOException | EncodeException e) {
+			e.printStackTrace();
 		}
-
-        @OnClose
-        public void onClose(Session session) throws IOException {
-            clientMessage message = new clientMessage();
-            message.setFrom("gizmo");
-            message.setContent("Connected!");
-            userSend(message, this.gizmoSession);
-        }
-
-        @OnError
-        public void onError(Session session, Throwable throwable) {
-            // Do error handling here
-        }
-
-        private static void userSend(clientMessage message, Session session) 
-            throws IOException, EncodeException {
- 
-            try {
-                session.getBasicRemote().
-                  sendObject(message);
-            } catch (IOException | EncodeException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+	}
+}

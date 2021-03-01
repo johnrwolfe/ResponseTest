@@ -16,12 +16,13 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.TreeMap;
 
-import interfaces.IDuplexComm;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.WebSocket;
+import java.util.concurrent.CompletionStage;
 
+import interfaces.IDuplexComm;
 import runconfig.FirstEndpoint;
-import runconfig.clientMessage;
-import runconfig.MessageEncoder;
-import runconfig.MessageDecoder;
 
 import runconfig.commshandler.CommsHandlerApp;
 
@@ -29,25 +30,28 @@ import runconfig.commshandler.CommsHandlerApp;
 public class CommsHandler extends Component<CommsHandler> {
 
     private Map<String, Class<?>> classDirectory;
-
     private static CommsHandler Singleton;
+    private WebSocket FirstEndpointWebSocket;
+    
     public static CommsHandler Singleton() {
     	return Singleton;
     }
 
     public CommsHandler(IApplication app, IRunContext runContext, int populationId) {
         super(app, runContext, populationId);
-
-
         LOG = null;
         classDirectory = new TreeMap<>();
         Singleton = this;
-
     }
 
     // domain functions
+    public void ForwardResponse( String p_message ) throws XtumlException {
+        context().LOG().LogInfo( "CommsHandler.ForwardResponse()" );
+        cf = FirstEndpointWebSocket.sendText( p_message, true );
+    }
+    
     public void SanityCheck() throws XtumlException {
-        context().LOG().LogInfo( "LogInfo enabled" );
+        context().LOG().LogInfo( "CommsHandler.SanityCheck()" );
     }
 
 
@@ -79,7 +83,12 @@ public class CommsHandler extends Component<CommsHandler> {
     // component initialization function
     @Override
     public void initialize() throws XtumlException {
-        context().LOG().LogInfo( "In comms" );
+        context().LOG().LogInfo( "CommsHandler.initialize()" );
+        FirstEndpointWebSocket = HttpClient
+          .newHttpClient()
+          .newWebSocketBuilder()
+          .buildAsync( URI.create( "ws://localhost/first" ), new FirstEndpoint() )
+          .join();
     }
 
     @Override

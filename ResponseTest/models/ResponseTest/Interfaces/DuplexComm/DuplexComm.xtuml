@@ -10,7 +10,8 @@ INSERT INTO C_EP
 	"2ea57d02-6792-4048-ad31-a99b817c0a21",
 	-1,
 	'QueryOne',
-	'');
+	'',
+	0);
 INSERT INTO C_AS
 	VALUES ("044c5a66-907b-4985-9c23-e8a30bd8c9df",
 	'QueryOne',
@@ -31,7 +32,8 @@ INSERT INTO C_EP
 	"2ea57d02-6792-4048-ad31-a99b817c0a21",
 	-1,
 	'QueryTwo',
-	'');
+	'',
+	0);
 INSERT INTO C_AS
 	VALUES ("3cc21cd2-fc15-4239-8175-351eda502201",
 	'QueryTwo',
@@ -52,7 +54,8 @@ INSERT INTO C_EP
 	"2ea57d02-6792-4048-ad31-a99b817c0a21",
 	-1,
 	'Response',
-	'');
+	'',
+	0);
 INSERT INTO C_AS
 	VALUES ("7b77e896-d436-43f9-88f7-463eb1ea95f0",
 	'Response',

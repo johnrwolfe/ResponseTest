@@ -32,7 +32,7 @@ INSERT INTO GD_GE
 	"2ea57d02-6792-4048-ad31-a99b817c0a21",
 	96,
 	0,
-	'ResponseTest::Interfaces::Duplex');
+	'ResponseTest::Interfaces::DuplexComm');
 INSERT INTO GD_SHP
 	VALUES ("7ba1f261-4bc0-478f-a1ca-6faf4410c0cc");
 INSERT INTO GD_NCS

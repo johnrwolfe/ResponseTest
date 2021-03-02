@@ -1,39 +1,57 @@
 package runconfig;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.WebSocket;
-import java.util.concurrent.CompletionStage;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+
+import org.java_websocket.WebSocket;
+import org.java_websocket.handshake.ClientHandshake;
+import org.java_websocket.server.WebSocketServer;
+
 import runconfig.CommsHandler;
 
-public class FirstEndpoint implements WebSocket.Listener {
-
-	@Override
-	public void onOpen( WebSocket webSocket ) {
-      System.out.printf( "onOpen\n" );
-      WebSocket.Listener.super.onOpen( webSocket );
+public class FirstEndpoint extends WebSocketServer {
+	public static WebSocket client;  // For now, handle only one client at at time
+	
+	public FirstEndpoint( InetSocketAddress address ) {
+	  super( address );
+	  System.out.printf( "FirstEndpoint()\n" );
 	}
 
 	@Override
-	public CompletionStage<?> onText( WebSocket webSocket, CharSequence data, boolean last ) {
-	  System.out.printf( "onText: data = %s, last = %s\n", data, last );
+	public void onOpen( WebSocket webSocket, ClientHandshake handshake ) {
+	  client = webSocket;
+      System.out.printf( "onOpen\n" );
+      webSocket.send( "Welcome to the server!" );
+	}
+
+	@Override
+	public void onMessage( WebSocket webSocket, String message ) {
+	  System.out.printf( "onMessage: message = %s\n", message );
 	  try {
-        CommsHandler.Singleton().App().QueryOne( data.toString() );
+        CommsHandler.Singleton().App().QueryOne( message );
 	  }
 	  catch ( Exception e ) {
-		System.out.printf( "Exception, %s, in onText()\n", e );
+		System.out.printf( "Exception, %s, in onMessage()\n", e );
 	  }
-      return null;
+	}
+	
+	@Override
+	public void onMessage( WebSocket webSocket, ByteBuffer message ) {
+		System.out.println( "onMessage: received byte buffer\n" );
 	}
 
 	@Override
-	public CompletionStage<?> onClose( WebSocket webSocket, int statusCode, String reason ){
+	public void onClose( WebSocket webSocket, int statusCode, String reason, boolean remote ){
       System.out.printf( "onClose: statusCode = %d; reason = %s\n", statusCode, reason );
-      return null;
 	}
 
 	@Override
-	public void onError( WebSocket webSocket, Throwable error ) {
-      System.out.printf( "onError: %s\n", error );
+	public void onError( WebSocket webSocket, Exception ex ) {
+      System.out.printf( "onError: %s\n", ex );
+	}
+	
+	@Override
+	public void onStart() {
+	  System.out.printf( "onStart: server started successfully\n" );
 	}
 }

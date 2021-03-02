@@ -61,7 +61,7 @@ INSERT INTO GD_GE
 	"ee046659-7d84-4396-b1a0-7f8106ed858a",
 	94,
 	0,
-	'ResponseTest::Components::Responder::Port1::Unnamed Interface');
+	'ResponseTest::Components::Responder::ClientComms::DuplexComm');
 INSERT INTO GD_CON
 	VALUES ("149b96d3-6255-49c7-8436-762b49c5699c",
 	"00000000-0000-0000-0000-000000000000");

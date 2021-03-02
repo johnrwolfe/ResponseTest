@@ -38,7 +38,7 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'StartUp',
 	'',
-	'LOG::LogInfo( message:"Responder.Startu()" );
+	'LOG::LogInfo( message:"Responder.Startup()" );
 create object instance heartbeat of Hearbeat;
 create event instance repeat of Hearbeat1:tick() to heartbeat;
 heartbeat.timr = TIM::timer_start_recurring( event_inst:repeat, microseconds:2000000 );',

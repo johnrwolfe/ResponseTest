@@ -61,7 +61,7 @@ INSERT INTO GD_GE
 	"ee4ec02d-5722-47c1-b01d-3dc8f2ff13b5",
 	93,
 	0,
-	'ClientHandler::Component::CommsHandler::Port1::Unnamed Interface');
+	'ClientHandler::Component::CommsHandler::App::DuplexComm');
 INSERT INTO GD_CON
 	VALUES ("81bde9cb-545c-44e4-b5b9-895f2ae55b26",
 	"00000000-0000-0000-0000-000000000000");

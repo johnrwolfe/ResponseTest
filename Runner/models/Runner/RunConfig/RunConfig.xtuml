@@ -71,7 +71,7 @@ INSERT INTO GD_GE
 	"4643be0c-1c6b-4317-9bdb-e75db30628d5",
 	105,
 	0,
-	'Runner::RunConfig::ResponseTest::Components::Responder::SocketPort::DuplexComm');
+	'Runner::RunConfig::ResponseTest::Components::Responder::ClientComms::DuplexComm');
 INSERT INTO GD_CON
 	VALUES ("4299792b-b03c-433c-963f-66ad702752fe",
 	"00000000-0000-0000-0000-000000000000");
@@ -213,7 +213,7 @@ INSERT INTO GD_GE
 	"f632eb38-447a-4cb7-a275-8075b302a184",
 	106,
 	0,
-	'Runner::RunConfig::ClientHandler::Component::CommsHandler::Port1::DuplexComm');
+	'Runner::RunConfig::ClientHandler::Component::CommsHandler::App::DuplexComm');
 INSERT INTO GD_CON
 	VALUES ("290677b6-4e95-48cc-af27-5bd95fe8c33a",
 	"00000000-0000-0000-0000-000000000000");
@@ -326,7 +326,7 @@ INSERT INTO CL_IC
 INSERT INTO CL_POR
 	VALUES ("38883066-8abf-48b1-b4b2-30e89c51af7a",
 	"73216294-69a3-49a4-bd97-d41418e6cec3",
-	'SocketPort',
+	'ClientComms',
 	"9864b81b-442e-4e2d-87de-62125b61a146");
 INSERT INTO CL_IIR
 	VALUES ("4643be0c-1c6b-4317-9bdb-e75db30628d5",
@@ -351,9 +351,10 @@ INSERT INTO C_IR_PROXY
 INSERT INTO C_PO_PROXY
 	VALUES ("73216294-69a3-49a4-bd97-d41418e6cec3",
 	"1155fe75-a325-495b-b1fe-e886292e902a",
-	'SocketPort',
+	'ClientComms',
 	0,
 	0,
+	'',
 	'../../../../ResponseTest/models/ResponseTest/Components/Responder/Responder.xtuml');
 INSERT INTO PE_PE
 	VALUES ("38883066-8abf-48b1-b4b2-30e89c51af7a",
@@ -371,6 +372,7 @@ INSERT INTO C_C_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	0,
 	'',
+	'',
 	'../../../../ResponseTest/models/ResponseTest/Components/Responder/Responder.xtuml');
 INSERT INTO CL_IC
 	VALUES ("b17eb876-18f0-4f47-8e2b-7c89bf878b72",
@@ -384,7 +386,7 @@ INSERT INTO CL_IC
 INSERT INTO CL_POR
 	VALUES ("b17eb876-18f0-4f47-8e2b-7c89bf878b72",
 	"3cab7a3b-b612-47c4-8e13-6ed6e1e22008",
-	'Port1',
+	'App',
 	"b421eda4-8d08-4e03-af00-2daef190b1e6");
 INSERT INTO CL_IIR
 	VALUES ("f632eb38-447a-4cb7-a275-8075b302a184",
@@ -407,9 +409,10 @@ INSERT INTO C_IR_PROXY
 INSERT INTO C_PO_PROXY
 	VALUES ("3cab7a3b-b612-47c4-8e13-6ed6e1e22008",
 	"53fa50fc-7453-46b4-91ae-c8d850d30958",
-	'Port1',
+	'App',
 	0,
 	0,
+	'',
 	'../../../../ClientHandler/models/ClientHandler/Component/CommsHandler/CommsHandler.xtuml');
 INSERT INTO PE_PE
 	VALUES ("b17eb876-18f0-4f47-8e2b-7c89bf878b72",
@@ -427,13 +430,14 @@ INSERT INTO C_C_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	0,
 	'',
+	'',
 	'../../../../ClientHandler/models/ClientHandler/Component/CommsHandler/CommsHandler.xtuml');
 INSERT INTO C_SF
 	VALUES ("770cd0f2-17cf-4a85-a3d9-082c2212cf71",
 	"ee4ec02d-5722-47c1-b01d-3dc8f2ff13b5",
 	"ee046659-7d84-4396-b1a0-7f8106ed858a",
 	'',
-	'Responder::SocketPort::DuplexComm -o)- CommsHandler::Port1::DuplexComm');
+	'Responder::ClientComms::DuplexComm -o)- CommsHandler::App::DuplexComm');
 INSERT INTO PE_PE
 	VALUES ("770cd0f2-17cf-4a85-a3d9-082c2212cf71",
 	1,
@@ -445,14 +449,14 @@ INSERT INTO C_R_PROXY
 	'DuplexComm',
 	'',
 	'Unnamed Interface',
-	'CommsHandler::Port1::DuplexComm',
+	'CommsHandler::App::DuplexComm',
 	'../../../../ClientHandler/models/ClientHandler/Component/CommsHandler/CommsHandler.xtuml');
 INSERT INTO C_P_PROXY
 	VALUES ("ee046659-7d84-4396-b1a0-7f8106ed858a",
 	'DuplexComm',
 	'Unnamed Interface',
 	'',
-	'Responder::SocketPort::DuplexComm',
+	'Responder::ClientComms::DuplexComm',
 	'../../../../ResponseTest/models/ResponseTest/Components/Responder/Responder.xtuml');
 INSERT INTO PE_PE
 	VALUES ("b8ee4391-b011-4caa-bcee-8b899273532c",

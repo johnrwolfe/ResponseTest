@@ -16,10 +16,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.TreeMap;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.WebSocket;
-import java.util.concurrent.CompletionStage;
+import java.net.InetSocketAddress;
 
 import interfaces.IDuplexComm;
 import runconfig.FirstEndpoint;
@@ -31,7 +28,6 @@ public class CommsHandler extends Component<CommsHandler> {
 
     private Map<String, Class<?>> classDirectory;
     private static CommsHandler Singleton;
-    private WebSocket FirstEndpointWebSocket;
     
     public static CommsHandler Singleton() {
     	return Singleton;
@@ -47,7 +43,7 @@ public class CommsHandler extends Component<CommsHandler> {
     // domain functions
     public void ForwardResponse( String p_message ) throws XtumlException {
         context().LOG().LogInfo( "CommsHandler.ForwardResponse()" );
-        FirstEndpointWebSocket.sendText( p_message, true );
+        FirstEndpoint.client.send( p_message );
     }
     
     public void SanityCheck() throws XtumlException {
@@ -83,12 +79,12 @@ public class CommsHandler extends Component<CommsHandler> {
     // component initialization function
     @Override
     public void initialize() throws XtumlException {
-        context().LOG().LogInfo( "CommsHandler.initialize()" );
-        FirstEndpointWebSocket = HttpClient
-          .newHttpClient()
-          .newWebSocketBuilder()
-          .buildAsync( URI.create( "ws://localhost/first" ), new FirstEndpoint() )
-          .join();
+      System.out.printf( "CommsHandler.initialize(): creating server\n" );
+      FirstEndpoint firstServer = new FirstEndpoint( 
+        new InetSocketAddress( "localhost", 8887) );
+      System.out.printf( "CommsHandler.initialize(): starting server\n" );
+      firstServer.run();
+      System.out.printf( "CommsHandler.initialize(): server started\n" );
     }
 
     @Override

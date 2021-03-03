@@ -41,9 +41,14 @@ public class CommsHandler extends Component<CommsHandler> {
     }
 
     // domain functions
-    public void ForwardResponse( String p_message ) throws XtumlException {
+    public void ForwardResponse( final String p_message ) throws XtumlException {
         context().LOG().LogInfo( "CommsHandler.ForwardResponse()" );
-        FirstEndpoint.client.send( p_message );
+        if ( FirstEndpoint.client != null ) {
+          System.out.printf( "ForwardResponse: sending %s to client.\n", p_message );
+          FirstEndpoint.client.send( p_message );
+        }
+        else
+          System.out.printf( "ForwardResponse: no client connected, so not sending.\n" );
     }
     
     public void SanityCheck() throws XtumlException {
@@ -83,7 +88,7 @@ public class CommsHandler extends Component<CommsHandler> {
       FirstEndpoint firstServer = new FirstEndpoint( 
         new InetSocketAddress( "localhost", 8887) );
       System.out.printf( "CommsHandler.initialize(): starting server\n" );
-      firstServer.run();
+      firstServer.start();
       System.out.printf( "CommsHandler.initialize(): server started\n" );
     }
 

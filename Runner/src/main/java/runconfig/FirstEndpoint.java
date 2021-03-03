@@ -21,7 +21,7 @@ public class FirstEndpoint extends WebSocketServer {
 	public void onOpen( WebSocket webSocket, ClientHandshake handshake ) {
 	  client = webSocket;
       System.out.printf( "onOpen\n" );
-      webSocket.send( "Welcome to the server!" );
+      client.send( "Welcome to the server!" );
 	}
 
 	@Override
